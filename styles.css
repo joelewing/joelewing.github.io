@@ -1,0 +1,55 @@
+body {
+    background-image: url(bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #ffa66c;
+    background-attachment: fixed;
+    background-position: bottom center;
+    overflow-y: hidden;
+    font-family: "Fira Sans", sans-serif;
+    text-shadow: 0.05em 0.05em 20px #FFF;
+    color: #DDD;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 36pt;
+    font-weight: 300;
+}
+
+#feature {
+    width: 480px;
+    text-align: center;
+    margin: 40px auto auto auto;
+
+}
+
+
+@media (max-width: 400px) {
+    #feature {
+        width: 100%;
+    }
+}
+
+#links {
+    margin-top: 40px;
+}
+
+a {
+    color: #DDD;
+    text-decoration: none;
+    width: 200px;
+    height: 20px;
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+
+
+
+}
+
+a:hover {
+    background-color: rgba(221, 221, 221, 0.3);
+    border-radius: 8px;
+    box-shadow: 0.05em 0.05em 20px rgba(255, 255, 255, 0.3);
+
+}

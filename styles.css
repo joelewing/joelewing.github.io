@@ -1,20 +1,29 @@
-html {
-        height:100%;
-        background: url(bg.png) no-repeat bottom center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    background-color: #ffa66c;
-        font-family: "Fira Sans", sans-serif;
+body {
+    font-family: "Fira Sans", sans-serif;
     text-shadow: 0.05em 0.05em 20px #FFF;
     color: #DDD;
     line-height: 1.4;
     overflow: hidden;
-    }
+}
 
-body {
+#fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
+#bgcover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url(bg.png); 
+    background-repeat: no-repeat; 
+    background-position: bottom center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #ffa66c;
 }
 
 h1 {

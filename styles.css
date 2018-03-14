@@ -1,15 +1,20 @@
-body {
-    background-image: url(bg.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
+html {
+        height:100%;
+        background: url(bg.png) no-repeat bottom center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     background-color: #ffa66c;
-    background-attachment: fixed;
-    background-position: bottom center;
-    overflow-y: hidden;
-    font-family: "Fira Sans", sans-serif;
+        font-family: "Fira Sans", sans-serif;
     text-shadow: 0.05em 0.05em 20px #FFF;
     color: #DDD;
     line-height: 1.4;
+    overflow: hidden;
+    }
+
+body {
+
 }
 
 h1 {
@@ -25,7 +30,7 @@ h1 {
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     #feature {
         width: 100%;
     }

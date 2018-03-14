@@ -34,13 +34,15 @@ body {
 h1 {
     font-size: 36pt;
     font-weight: 300;
+    margin-top: 0px;
 }
 
 #feature {
     width: 480px;
     text-align: center;
-    margin: 10px auto auto auto;
+    margin: 24px auto auto auto;
     position: relative;
+    padding-bottom: 100px;
 
 }
 

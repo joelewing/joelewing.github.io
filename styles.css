@@ -2,6 +2,8 @@ body {
     font-family: "Fira Sans", sans-serif;
     color: #DDD;
     line-height: 1.4;
+    height: 100%;
+    width: 100%;
     
     background: rgb(49,39,214);
 background: -moz-linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);

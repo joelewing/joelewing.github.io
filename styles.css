@@ -70,7 +70,6 @@ a {
     background-color: #023770;
         border-radius: 8px;
     
-    box-shadow: 0.05em 0.05em 20px rgba(0, 0, 0, 0.3);
 
 
 
@@ -85,5 +84,4 @@ a:hover {
 
 img {
     border-radius: 50%;
-    box-shadow: 0em 0em 4px #FFF;
 }

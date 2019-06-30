@@ -2,6 +2,12 @@ body {
     font-family: "Fira Sans", sans-serif;
     color: #DDD;
     line-height: 1.4;
+    
+    background: rgb(49,39,214);
+background: -moz-linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);
+background: -webkit-linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);
+background: linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3127d6",endColorstr="#095079",GradientType=1);
 }
 
 #fixed {
@@ -13,14 +19,6 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-}
-
-#bgcover {
-    background: rgb(49,39,214);
-background: -moz-linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);
-background: -webkit-linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);
-background: linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3127d6",endColorstr="#095079",GradientType=1);
 }
 
 h1 {

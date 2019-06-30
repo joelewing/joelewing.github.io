@@ -16,18 +16,11 @@ body {
 }
 
 #bgcover {
-    top: 0;
-    left:0;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-image: url(bg.png); 
-    background-repeat: no-repeat; 
-    background-position: bottom center;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #FF6F45;
-    overflow-x: hidden;
+    background: rgb(49,39,214);
+background: -moz-linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);
+background: -webkit-linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);
+background: linear-gradient(90deg, rgba(49,39,214,1) 0%, rgba(9,80,121,1) 85%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3127d6",endColorstr="#095079",GradientType=1);
 }
 
 h1 {

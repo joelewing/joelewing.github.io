@@ -1,27 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
 
 <head>
-    <title>Joel Ewing</title>
+    <title>Joel Ewing - Idea Generator, Problem Solver, Dreamer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="foundation-float.css">
     <link href="styles.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 
 <body>
-   <div id="fixed">
-    <div id="feature">
-       <img alt="My profile picture" src="profile.jpg" width="100px">
-        <h1>Joel Ewing</h1>
-        <p>At the intersection of healthcare and design.</p>
-        <p>Studying Speech-Language Pathology and Audiology at the University of Texas at Dallas.</p>
-        <!-- add more links -->
-        <nav><a href="https://www.linkedin.com/in/joel-ewing-ba3020137/"><i class="fab fa-linkedin"></i> LinkedIn</a> <a href="mailto:design@joelewing.com"><i class="fas fa-envelope"></i> Email</a></div>
-    </nav>
+    <header>
+        <div id="navbar">
+            <h1 id="navtitle"><a id="homelink" href="index.html">Joel Ewing</a></h1>
+            <ul id="navlinks" class="navlinks">
+                <li><a class="navlink" href="#about">About</a></li>
+                <!--<li><a class="navlink" href="#projects">Projects</a></li>-->
+                <li><a class="navlink" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <a href="#main-menu" id="main-menu-toggle" class="menu-toggle" aria-label="Open main menu">
+            <span class="sr-only">Open main menu</span>
+            <span class="fa fa-bars" aria-hidden="true"></span>
+        </a>
+
+
+        <nav id="main-menu" class="main-menu" aria-label="Main menu">
+            <a href="#main-menu-toggle" id="main-menu-close" class="menu-close" aria-label="Close main menu">
+                <span class="sr-only">Close main menu</span>
+                <span class="fa fa-close" aria-hidden="true"></span>
+            </a>
+            <ul id="menu-list" class="menu-list">
+                <li><a class="menu-item" href="#">About</a></li>
+                <!--<li><a href="#">Projects</a></li>-->
+                <li><a class="menu-item" href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#main-menu-toggle" tabindex="-1" aria-hidden="true" hidden></a>
+    </header>
+
+    <div id="fixed">
+        <div id="feature">
+            <img id="profile" alt="My profile picture" src="joelprofile.jpeg" width="180px">
+            <span id="name">Joel Ewing</span>
+            <div id="taglines">
+                <span class="tagline"><span class="reddot">&middot;</span> Idea Generator</span>
+                <span class="tagline"><span class="reddot">&middot;</span> Problem Solver</span>
+                <span class="tagline"><span class="reddot">&middot;</span> Dreamer</span>
+            </div>
+            <!--<img src="colorgear98.jpg" width="400px">-->
+            <div class="project-section" id="education">EDUCATION</div>
+            <div class="project-section" id="utdallas">
+                <div class="row">
+                    <div class="columns large-5"><img alt="ut dallas logo" src="monogram-rgb.svg" id="utdlogo" width="140px;">
+                        <p class="bolder">UT DALLAS</p>
+                    </div>
+                    <div class="columns large-7 normaler">
+                        <div id="education-description">
+                            <p>I have a B.S. in Speech-Language Pathology & Audiology from The University of Texas At Dallas.</p>
+                            <p>I have taken additional coursework in Design, Media Production,and Psychology.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-section">
+                <div class="row">
+                    <div class="columns large-5 float-right">
+                        <img alt="comptia logo" src="CompTIA_A_2Bce.png" id="comptia" width="240px;">
+                        <p class="bolder">COMPTIA A+</p>
+
+                    </div>
+
+                    <div class="columns large-7 float-left normaler">
+                        <div id="comptiaplus">
+                            <p>I am CompTIA A+ certified, and I am proficient at diagnosing, troubleshooting and fixing computer problems.</p>
+                            <p>This certification covers device configuration, data backup and recovery, and operating system (Windows, Mac, Linux) configuration.</p>
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- add more links 
+            <nav><a href="https://www.linkedin.com/in/joel-ewing-ba3020137/"><i class="fab fa-linkedin"></i> LinkedIn</a> <a href="mailto:design@joelewing.com"><i class="fas fa-envelope"></i> Email</a>
+            </nav>-->
+
+           <!-- <div class="projects project-section" id="projectheader">PROJECTS</div>
+            <div class="projects project-section" id="brainstorming">*add image, title, project description, tools, responsibilities. link to design process and other documents*
+            </div>
+            <div class="project-section" id="arteca">
+                <div class="row">
+                    <div class="columns large-5"><div id="arteca-box"><img src="arteca-logo.svg" id="arteca-logo">ARTECA
+                        <a href="idk"><span class="learnmore">learn more &#8250;</span></a></div></div>
+                <div class="columns large-7 normaler"><p>A collaboration between The MIT Press and UT Dallas, ARTECA is a curated space for essential content linking the arts sciences and technologies.</p></div></div>
+            </div>-->
+
+        </div>
+        <!--<div class="projects project-section" id="thoughtnav">ThoughtNav</div>
+        <div class="projects project-section" id="omnimessage">OmniMessage</div>
+        <div class="projects project-section" id="restbeacon">Rest Beacon</div>
+        <div class="projects project-section" id="dental app">Dental App</div>
+        <div class="projects project-section" id="nmsu-interactives">NMSU Interactives</div>
+        <div class="projects project-section">CONTACT</div>
+        <div class="projects project-section">RESUME</div>-->
     </div>
-    
 </body>
 
 </html>

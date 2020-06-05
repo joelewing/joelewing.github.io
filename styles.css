@@ -75,8 +75,8 @@ body {
 
 .main-menu a:hover,
 .main-menu a:focus {
-    background-color: #ffcccc;
-    color: #1d00ff;
+    background-color: #000;
+    color: #fff;
 }
 
 .main-menu .menu-close {
@@ -253,8 +253,8 @@ a {
 }
 
 .navlink:hover {
-    background-color: rgba(217, 110, 110, 0.21);
-    color: #1d00ff;
+    background-color: #000;
+    color: #fff;
 
 
 }
@@ -539,4 +539,79 @@ html {
     #homelink {
         color: #fff;
     }
+}
+
+.projectsection a {
+    font-weight: 700;
+}
+
+#contact {
+    font-weight: 700;
+        font-size: 40pt;
+}
+
+.contact-links {
+    font-size: 16pt;
+    display: inline-block;
+}
+
+.contact-links:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    html,
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    #navbar {
+        background-color: #000;
+    }
+
+
+
+    .main-menu ul {
+        background-color: #000;
+
+    }
+
+    .menu-toggle:hover,
+    .menu-toggle:focus {
+        color: #fff;
+    }
+    
+    
+.main-menu a:hover,
+.main-menu a:focus {
+    background-color: #fff;
+    color: #000;
+}
+
+
+    .menu-toggle {
+        color: #fff;
+    }
+
+    .menu-item {
+        color: #fff;
+    }
+
+    #homelink {
+        color: #fff;
+    }
+    .contact-links:hover {
+    background-color: #fff;
+    color: #000;
+}
+    .navlink:hover {
+    background-color: #fff;
+    color: #000;
+
+
+}
+
 }

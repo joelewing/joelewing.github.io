@@ -561,7 +561,7 @@ html {
     color: #fff;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
 
     html,
     body {

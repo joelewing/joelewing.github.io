@@ -553,6 +553,7 @@ html {
 .contact-links {
     font-size: 16pt;
     display: inline-block;
+    color: #000;
 }
 
 .contact-links:hover {
@@ -560,58 +561,73 @@ html {
     color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
 
     html,
     body {
-        background-color: #000;
-        color: #fff;
+        background-color: #3b3b3b;
+        color: #eee;
     }
 
     #navbar {
-        background-color: #000;
+        background-color: #3b3b3b;
     }
 
 
 
     .main-menu ul {
-        background-color: #000;
+        background-color: #3b3b3b;
 
     }
 
     .menu-toggle:hover,
     .menu-toggle:focus {
-        color: #fff;
+        color: #eee;
+    }
+    
+    #menu-list {
+            border-bottom: 4px solid #a6aaf1;
     }
     
     
 .main-menu a:hover,
 .main-menu a:focus {
-    background-color: #fff;
-    color: #000;
+    background-color: #eee;
+    color: #3b3b3b;
 }
 
 
     .menu-toggle {
-        color: #fff;
+        color: #eee;
     }
 
     .menu-item {
-        color: #fff;
+        color: #eee;
     }
 
     #homelink {
-        color: #fff;
+        color: #eee;
+    }
+    .navlink {
+        color: #eee;
     }
     .contact-links:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #eee;
+    color: #3b3b3b;
 }
     .navlink:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #eee;
+    color: #3b3b3b;
 
 
 }
-
+    .reddot {
+        color: #b43c29;
+    }
+    .contact-links {
+        color: #eee;
+    }
+    #navbar {
+            border-bottom: 4px solid #a6aaf1;
+    }
 }

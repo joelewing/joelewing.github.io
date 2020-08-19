@@ -464,7 +464,7 @@ input[type="checkbox"]:checked + label::after {
   left: calc(
     -1 * (var(--checkbox-total-width-precalc)) + var(--checkmark-left)
   );
-  background-image: url("./icon/checkmark2.svg");
+  background-image: url("./icons/checkmark2.svg");
     background-repeat: no-repeat;
 
 
@@ -479,7 +479,7 @@ border-color: hsl(212, 0%, 82%);
 }
 
 input[type="checkbox"][disabled]:checked + label::after {
-  background: url("./icon/checkmark-disabled.svg");
+  background: url("./icons/checkmark-disabled.svg");
     background-repeat: no-repeat;
    
 

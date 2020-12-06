@@ -9,10 +9,6 @@ body {
     padding: 0;
 }
 
-
-
-
-
 /* Screen reader only */
 .sr-only {
     position: fixed;
@@ -349,7 +345,6 @@ ul li {
     text-align: center;
 }
 
-#arteca {}
 
 .project-title {
     font-size: 28pt;
@@ -377,8 +372,6 @@ ul li {
     height: auto;
     margin-top: 0px;
     color: #ffffff;
-
-
 }
 
 .menu-list li {
@@ -391,8 +384,6 @@ ul li {
     height: 100px;
 
 }
-
-
 
 #section-title {
     width: 100%;
@@ -429,6 +420,10 @@ html {
     font-size: 36pt;
 }
 
+.bluedot {
+   color:#1d00ff;
+   font-size: 36pt;
+
 .yellowdot {
     color: #FFFF00;
     font-size: 36pt;
@@ -441,8 +436,6 @@ html {
 
 #education {
     margin-top: 20pt;
-    font-size: 40pt;
-    font-weight: 700;
 }
 
 #utdallas {
@@ -461,19 +454,6 @@ html {
     margin-top: 20px;
     padding: 0px;
 }
-
-.normaler {}
-
-#projectheader {
-    font-size: 40pt;
-    font-weight: 700;
-}
-
-#comptia {}
-
-
-
-
 
 .learnmore {
     border: 2px solid #000;
@@ -623,6 +603,9 @@ html {
 }
     .reddot {
         color: #b43c29;
+    }
+    .bluedot {
+       color: #a6aaf1;
     }
     .contact-links {
         color: #eee;

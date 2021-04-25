@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="">
-
+<html lang="en">
+<div class="content"></div>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" type="text/css" href="cool.css">
-  <title>Artbot 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="minimal.css">
+
+  <title>Artbot</title>
   <script src="p5.js"></script>
   <!-- <script src="../addons/p5.sound.js"></script> -->
   <script src="sketch.js"></script>
   <style>
+    
     .construction-text {
       padding-top: 8px;
     }
@@ -19,46 +22,56 @@
     body {
       overflow-x: hidden;
     }
+
     #sketch-holder-holder {
       width: 100%;
       overflow-x: hidden;
     }
+
     #sketch-holder {
       width: 80px;
       margin-left: 0;
 
     }
+
     .cone {
       width: 32px;
     }
+
     @media (min-width: 700px) {
-    .cone {
-      width: 52px;
-    }
+      .cone {
+        width: 52px;
+      }
     }
   </style>
 </head>
 
 <body class="cool-styles cool-layout-single-column">
   <header data-grid-area="header">
-    <h1 class="cool-heading-1">Artbot 2 🎨🤖</h1>
+    <h1 class="cool-heading-1">Artbot 🎨🤖</h1>
     <p class="cool-text-small cool-text-subdued"><i>a <a href="index.html">joel ewing</a> project</i></p>
   </header>
   <main data-grid-area="main">
     <article class="cool-flow-24">
       <div id="sketch-holder-holder">
-    <div id="sketch-holder">
-      <!-- Our sketch will go here! -->
-    </div>
-    </div>
-    <p class="cool-text-medium">Unfortunately, Artbot 2 only knows this Jackson Pollock style right now. Artbot 2 will get smarter soon.</p>
-    <p class="cool-text-small cool-text-subdued">Moving the mouse will change the <a href="https://en.wikipedia.org/wiki/Curve_orientation">curvature</a> of the strokes. Negative curvature, straight lines, and positive curvature are all possible.</p>
-    <br>
-    <div class="cool-flex-row">
-      <img src="constructioncone.gif" width="52px" class="cone"><p class="cool-text-medium construction-text"><strong>This page is under construction and is subject to change.</strong></p><img src="constructioncone.gif" width="52px" class="cone">
-</div>  
-</article>
-</main>
+        <div id="sketch-holder">
+
+          <!-- Our sketch will go here! -->
+        </div>
+      </div>
+      <p class="cool-text-medium">Unfortunately, Artbot only knows this Jackson Pollock style right now. Artbot 2 will
+        get smarter soon.</p>
+      <p class="cool-text-small cool-text-subdued">Moving the mouse will change the <a
+          href="https://en.wikipedia.org/wiki/Curve_orientation">curvature</a> of the strokes. Negative curvature,
+        straight lines, and positive curvature are all possible.</p>
+      <br>
+      <div class="cool-flex-row">
+        <img src="constructioncone.gif" width="52px" class="cone">
+        <p class="cool-text-medium construction-text"><strong>This page is under construction and is subject to
+            change.</strong></p><img src="constructioncone.gif" width="52px" class="cone">
+      </div>
+    </article>
+  </main>
 </body>
 
 </html>

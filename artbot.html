@@ -14,6 +14,19 @@
     body {
       overflow-x: hidden;
     }
+
+    #sketch-holder-holder {
+      width: 100%;
+      overflow-x: hidden;
+
+
+    }
+
+    #sketch-holder {
+      width: 10px;
+      margin-left: 0;
+      height: 500px;
+    }
   </style>
 </head>
 <body class="cool-styles cool-layout-two-column-aside-main">
@@ -21,12 +34,12 @@
       <h1 class="cool-heading-1">Artbot 🎨🤖</h1>
   </header>
   <main data-grid-area="main">
+    <div class="sketch-holder-holder">
+    <div id="sketch-holder">
+    </div>
+    </div>
       <article flow="cool-flow-24">
-            <div id="sketch-holder">
-          </div>
-          <p class="cool-text-medium">Unfortunately, Artbot only knows this Jackson Pollock style right now. Artbot will
-            get smarter soon.</p>
-          <p class="cool-text-small cool-text-subdued">Moving the mouse will change the <a
+          <p class="cool-text-small">Moving the mouse will change the <a
               href="https://en.wikipedia.org/wiki/Curve_orientation">curvature</a> of the strokes. Negative curvature,
             straight lines, and positive curvature are all possible.</p>
             <br>

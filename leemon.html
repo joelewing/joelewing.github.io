@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leemon Baird</title>
+</head>
+
+<body>
+    <table border=0>
+        <tr style="vertical-align:top">
+            <td width=85%>
+                <h1>Leemon Baird's Home Page</h1>
+
+                <h3>Publications</h3>
+                The <a href="papers/">list of publication</a> includes a number of peer-reviewed publications on
+                research in several different fields.
+
+                <h3>Experience</h3>
+                <ul>
+                    <li>PhD in Computer Science from <a href="http://www.cmu.edu">Carnegie Mellon University</a></li>
+                    <li>Currently co-founder and CTO of <a href="http://www.swirlds.com">Swirlds Inc</a>, which builds
+                        software for distributed consensus based on the hashgraph consensus algorithm.</li>
+                    <li>Co-founder and CTO of Trio Security, and later BlueWave Security, both of which were acquired
+                    </li>
+                    <li>Professor of Computer Science at the <a href="http://www.usafa.edu/df/dfcs/">Air Force
+                            Academy</a></li>
+                    <li>Adjunct professor or PhD committee member at <a href="http://www.uccs.edu">University of
+                            Colorado at Colorado Springs</a>, and <a href="http://www.du.edu">Denver University</a>, and
+                        <a href="http://www.uc.edu">University of Cincinnati</a>. Visiting professor at <a
+                            href="https://www.kaust.edu.sa/en">KAUST University</a>.</li>
+                    <li>Research scientist in the <a
+                            href="http://www.af.mil/AboutUs/FactSheets/Display/tabid/224/Article/104463/air-force-research-laboratory.aspx">Air
+                            Force Research Laboratory</a>, and at the <a
+                            href="http://www.usafa.edu/df/dfe/dfer/centers/accr/">Academy Center for Cyberspace
+                            Security</a></li>
+                    <li>US Air Force Lt Col (ret), 1985-2009. <a href="http://www.usafa.edu">US Air Force Academy</a>,
+                        class of 1989.</li>
+                </ul>
+                <br><br>
+            </td>
+            <td>
+                <img src="ambigram.gif" width="100%">
+            </td>
+        </tr>
+        <tr>
+            <td>
+    </table>
+    <h1>Research</h1>
+    I'm interested in many different research areas, especially those with an emphasis on math and creating new
+    algorithms.
+
+    <h3>Distributed Consensus</h3>
+    The new <a href="papers/2016b.pdf">hashgraph</a> consensus algorithm (illustrated with <a
+        href="papers/2016b2.pdf">examples</a>) allows a group to come to agreement on an ordering for transactions, and
+    to on the outcome of running code (smart contracts). It
+    is Byzantine Fault Tolerant, and yields a database that is ACID compliant. Past approaches to this problem have
+    included blockchain, leader-based systems, and voting-based systems. Hashgraph is different in that it ensures
+    fairness of the ordering of events, and fairness in the consensus timestamps. It is more resistant to DDoS attacks
+    than leader-based systems, more computationally efficient than proof-of-work blockchains, and more bandwidth
+    efficient than voting-based systems. An implementation of it (with example apps) is available for download in an <a
+        href="http://www.swirlds.com/download">SDK</a>.
+
+    <h3>Jam Resistance</h3>
+    Traditional jam resistant radios require some kind of secret that is shared by the sender and receiver, but unknown
+    to the jammer. The <a href="papers/2007bbc2.pdf">BBC</a> system gives equally good jam resistance, but without the
+    shared secret. It allows ad hoc networks to establish communication without having to share a key in advance, and
+    without worrying about an attacker capturing the key. BBC is the only known system that can provide unkeyed jam
+    resistance against an adversary with large amounts of computational power. When combined with the new <a
+        href="papers/2012bcbs.pdf">Glowworm hash function</a>, there are both theoretical and <a
+        href="papers/2015bp.pdf">empirical</a> results showing the security of the system. More recent work suggests the
+    <a href="papers/2015hbt.pdf">HBT</a> system may provide a second approach to providing unkeyed jam resistance.
+
+    <h3>Machine Learning</h3>
+    The first <a href="papers/1999bm.pdf">reinforcement learning</a> algorithms with guaranteed convergence on neural
+    networks, as well as the ability to optimize both value and policy functions simultaneously, rather than just using
+    dynamic programming to reduce Bellman residual error. A more detailed description of these is in the <a
+        href="papers/1999b.pdf">dissertation</a>. Other research includes training neural networks to <a
+        href="papers/1998wbp.pdf">become more local</a> (to avoid forgetting when learning new things), generating data
+    from <a href="papers/2005bsi.pdf">learned probability distributions</a>, using neural networks for <a
+        href="papers/1992b.pdf">minimization</a>, new <a href="papers/1993bk3.pdf">function approximation</a> systems
+    for which minimization is instantaneous, and several papers on the <a href="papers/1990wb.pdf">theory of
+        reinforcement learning</a>, including theorems on <a href="papers/1993wb.pdf">actor-critic</a> and <a
+        href="papers/1993wb2.pdf">value iteration</a> systems.
+
+    <h3>Cellular Automata</h3>
+    Our universe has conservation laws in physics, such as conservation of energy or conservation of angular momentum. A
+    cellular automaton defines a model of a new universe with new laws of physics, which may or may not have any such
+    conserved quantities. New algorithms give more efficient ways to discover whether a given cellular automaton has any
+    conserved functions, and are able to <a href="papers/2007bf.pdf">discover new conserved energy functions</a> for
+    many cellular automata, including where none were previously known, along with <a href="papers/2008b.pdf">proving
+        they don't exist</a> in cellular automata where their existence was an open question. Furthermore, these
+    functions can be simplified and better understood using an approach for factoring out "trivial" functions, which are
+    functions that are conserved for all possible cellular automata. A complete <a href="papers/2012bf.pdf">theory of
+        the trivials</a> was developed, and used to perform such simplifications.
+
+    <h3>Graphics</h3>
+    Computer graphics projects range from <a href="papers/2008bb2.pdf">graph drawing</a> algorithms for the Game of
+    Sprouts, to <a href="papers/2006sb.pdf">visualizing cryptanalysis theorems for RC4</a>, to creating jam resistant
+    codewords that <a href="papers/2010bsbs.pdf">form a picture</a>.
+
+    <h3>Other areas</h3>
+    There are a number of fun research projects, from proving the NP-completeness of the <a
+        href="papers/2010bs.pdf">Game of Sprouts</a> and <a href="papers/2016fb.pdf">word hypercubes</a>, to developing
+    an origami fold to turn a business card into an <a href="papers/2010bff.pdf">icosahedron</a>.
+
+    <br><br>
+
+    <h1>Quotes</h1>
+
+    <p>"This is My commandment, that you love one another, just as I have loved you.<small><sup><a
+                    href="https://www.biblegateway.com/passage/?search=John+15%3A12&version=NASB">1</a></small></sup> I
+        am the good shepherd; the good shepherd lays down His life for the sheep.<small><sup><a
+                    href="https://www.biblegateway.com/passage/?search=John+10%3A11&version=NASB">2</a></small></sup> I
+        am the way, and the truth, and the life; no one comes to the Father but through Me."<small><sup><a
+                    href="https://www.biblegateway.com/passage/?search=John+14%3A6&version=NASB">3</a></small></sup><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Jesus Christ</p>
+
+    <p>Jesus "is the image of the invisible God, the firstborn of all creation. For by Him all things were created, both
+        in the heavens and on earth, ... All things have been created through Him and for Him. He is before all things,
+        and in Him all things hold together. ... For it was the Father's good pleasure for all the fullness to dwell in
+        Him, and through Him to reconcile all things to Himself, having made peace through the blood of His
+        cross"<small><sup><a href="https://www.biblegateway.com/passage/?search=Col+1%3A15-20&version=NASB" )>4</a></p>
+</body>
+
+</html>

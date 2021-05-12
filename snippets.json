@@ -1,0 +1,12 @@
+{
+  "html": {
+    "snippets": {
+      "h1": "h1.cool-heading-1",
+      "h2": "h2.cool-heading-2",
+      "h3": "h3.cool-heading-3",
+      "medium": "p.cool-text-medium",
+      "small": "p.cool-text-small",
+      "subdued": "p.cool-text-subdued.cool-text-medium"
+    }
+  }
+}

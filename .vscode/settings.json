@@ -1,3 +1,6 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "joelewing.github.io"
+    "liveServer.settings.multiRootWorkspaceName": "joelewing.github.io",
+    "emmet.extensionsPath": [
+        "~/Documents/joelewing.github.io"
+    ]
 }

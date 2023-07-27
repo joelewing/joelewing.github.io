@@ -1,0 +1,345 @@
+<!doctypehtml>
+    <html lang=en-us>
+
+    <head>
+        <meta charset=utf-8>
+        <meta content="text/html; charset=utf-8" http-equiv=Content-Type>
+        <title>Joel Ewing - nanostory</title>
+        <style>
+            body {
+                font-family: 'Times New Roman', Times, serif;
+                margin: 0;
+                padding: none;
+                background-color: lightblue;
+            }
+
+            .emscripten {
+                padding-right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                display: block
+            }
+
+            div.emscripten {
+                text-align: center
+            }
+
+            div.emscripten_border {
+                border: 1px solid #000;
+                display: none;
+
+            }
+
+            canvas.emscripten {
+                border: 0 none;
+                background-color: #000
+            }
+
+            #emscripten_logo {
+                display: inline-block;
+                margin: 0
+            }
+
+            .spinner {
+                height: 30px;
+                width: 30px;
+                top: 220px;
+                position: absolute;
+                left: 50%;
+               margin: 0 auto;
+                display: none;
+                vertical-align: top;
+                -webkit-animation: rotation .8s linear infinite;
+                -moz-animation: rotation .8s linear infinite;
+                -o-animation: rotation .8s linear infinite;
+                animation: rotation .8s linear infinite;
+                border-left: 5px solid #ebebeb;
+                border-right: 5px solid #ebebeb;
+                border-bottom: 5px solid #ebebeb;
+                border-top: 5px solid #787878;
+                border-radius: 100%;
+                background-color: #2e99d7
+            }
+
+            @-webkit-keyframes rotation {
+                from {
+                    -webkit-transform: rotate(0)
+                }
+
+                to {
+                    -webkit-transform: rotate(360deg)
+                }
+            }
+
+            @-moz-keyframes rotation {
+                from {
+                    -moz-transform: rotate(0)
+                }
+
+                to {
+                    -moz-transform: rotate(360deg)
+                }
+            }
+
+            @-o-keyframes rotation {
+                from {
+                    -o-transform: rotate(0)
+                }
+
+                to {
+                    -o-transform: rotate(360deg)
+                }
+            }
+
+            @keyframes rotation {
+                from {
+                    transform: rotate(0)
+                }
+
+                to {
+                    transform: rotate(360deg)
+                }
+            }
+
+            #status {
+                display: block;
+                vertical-align: top;
+margin: 0 auto;
+                font-weight: 700;
+                color: #000000
+            }
+
+            #progress {
+                height: 20px;
+                width: 300px
+            }
+
+            #controls {
+                display: inline-block;
+                float: right;
+                vertical-align: top;
+                margin-top: 30px;
+                margin-right: 20px;
+                display: none;
+            }
+
+            #output {
+                width: 800px;
+                height: 600px;
+                margin: 0 auto;
+                margin-top: 100px;
+                border-left: 0;
+                border-right: 0px;
+                padding-left: 16pt;
+                padding-right: 16pt;
+                display: block;
+                background-color: #fff;
+                color: #000;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 20px;
+                filter: drop-shadow(rgba(0, 0, 0, 0.5) 0px 2px 4px);
+                border-radius: 8pt;
+                border: 0px;
+            }
+
+            @font-face {
+                font-family: "Source Sans Pro";
+                src: url(regular.woff2);
+                font-weight: 400
+            }
+
+            @font-face {
+                font-family: "Source Sans Pro";
+                src: url(bold.woff2);
+                font-weight: 700
+            }
+
+            .cool-styles,
+            .cool-styles *,
+            .cool-styles ::after,
+            .cool-styles ::before {
+                box-sizing: border-box;
+                background-origin: border-box;
+                background-repeat: no-repeat;
+                margin: unset;
+                padding: unset;
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+                color: inherit
+            }
+
+            .cool-styles {
+                text-rendering: optimizeSpeed
+            }
+
+            .cool-styles:focus-within {
+                scroll-behavior: smooth
+            }
+
+            .cool-styles a[class] {
+                text-decoration: none
+            }
+
+            .cool-styles a:not([class]) {
+                text-decoration-skip-ink: auto
+            }
+
+            .cool-styles img {
+                max-width: 100%;
+                display: block
+            }
+
+            @media (prefers-reduced-motion:reduce) {
+
+                .cool-styles *,
+                .cool-styles ::after,
+                .cool-styles ::before {
+                    animation-duration: 0s !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0s !important;
+                    scroll-behavior: auto !important
+                }
+
+                .cool-styles:focus-within {
+                    scroll-behavior: auto
+                }
+            }
+
+            .cool-styles {
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: 1rem;
+                line-height: 1.7rem
+            }
+
+            .cool-styles a {
+                color: #1876a5;
+                text-underline-offset: 2px
+            }
+
+            .cool-styles a:hover {
+                color: #082636
+            }
+
+            .cool-heading-1 {
+                padding-left: 32px;
+                font-family: 'Times New Roman', Times, serif;
+                font-style:italic;
+                display:inline-block;
+            }
+
+            .cool-heading-2 {
+                font-size: 2rem;
+                line-height: 4rem
+            }
+
+            .cool-heading-3 {
+                font-size: 1.5rem;
+                line-height: 2rem
+            }
+
+            .cool-text-medium {
+                font-size: 1rem;
+                line-height: 1.5rem
+            }
+
+            .cool-text-small {
+                font-size: .875rem;
+                line-height: 1.25rem
+            }
+
+            .cool-text-subdued {
+                color: #4E595F;
+            }
+
+            .cool-flow-24>:not(:last-child) {
+                margin-bottom: 1.5rem
+            }
+
+            [class*=cool-flex-row] {
+                display: flex;
+                align-items: center
+            }
+
+            [class*=cool-flex-row] :not(:last-child) {
+                margin-right: 1rem
+            }
+
+            .cool-layout-default {
+                max-width: calc(200px + 75ch);
+                margin: 0 auto;
+                display: grid;
+                grid-template-rows: auto auto auto auto;
+                grid-template-areas: "header" "main" "aside" "footer"
+            }
+
+            .cool-layout-default [data-grid-area=header],
+            .cool-layout-default [data-grid-area=main] {
+                padding: 1rem
+            }
+
+            .cool-layout-default [data-grid-area=header] {
+                grid-area: header
+            }
+
+            .cool-layout-default [data-grid-area=main] {
+                grid-area: main
+            }
+
+            .cool-layout-default article {
+                max-width: 75ch;
+                font-size: 1.25rem;
+                line-height: 1.875rem
+            }
+
+            @media (min-width:700px) {
+                .cool-layout-default {
+                    min-height: 100vh;
+                    grid-template-columns: 1fr 200px;
+                    grid-template-rows: auto 1fr auto;
+                    grid-template-areas: "header header" "main aside" "footer footer"
+                }
+            }
+            #emscripten-output {
+                display: inline-block;
+                width: 100px;
+                margin-left: 40px;
+            }
+
+#page-title {
+    height: 80px;
+    background-color: aliceblue;
+    position: absolute;
+    margin-top: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+    display: inline-block;
+}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="page-title">
+            <h1 class="cool-heading-1">nanostory 📖</h1>
+     
+        
+        <div class=spinner id=spinner></div>
+        <div id="emscripten-output">
+        <div class=emscripten id=status>Downloading...</div><span id=controls><span><input type=checkbox
+                    id=resize>Resize canvas</span><span><input type=checkbox id=pointerLock checked>Lock/hide mouse
+                pointer    </span><span><input type=button
+                    onclick='Module.requestFullscreen(document.getElementById("pointerLock").checked,document.getElementById("resize").checked)'
+                    value=Fullscreen></span></span>
+        <div class=emscripten><progress hidden id=progress max=100 value=0></progress></div>
+    </div>
+        <div class=emscripten_border><canvas class=emscripten id=canvas oncontextmenu=event.preventDefault()
+                tabindex=-1></canvas></div><textarea id=output rows=20></textarea>
+                </div>
+        <script>var statusElement = document.getElementById("status"), progressElement = document.getElementById("progress"), spinnerElement = document.getElementById("spinner"), Module = { preRun: [], postRun: [], print: function () { var e = document.getElementById("output"); return e && (e.value = ""), function (t) { arguments.length > 1 && (t = Array.prototype.slice.call(arguments).join(" ")), console.log(t), e && (e.value += t + "\n", e.scrollTop = e.scrollHeight) } }(), canvas: (() => { var e = document.getElementById("canvas"); return e.addEventListener("webglcontextlost", (e => { alert("WebGL context lost. You will need to reload the page."), e.preventDefault() }), !1), e })(), setStatus: e => { if (Module.setStatus.last || (Module.setStatus.last = { time: Date.now(), text: "" }), e !== Module.setStatus.last.text) { var t = e.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/), n = Date.now(); t && n - Module.setStatus.last.time < 30 || (Module.setStatus.last.time = n, Module.setStatus.last.text = e, t ? (e = t[1], progressElement.value = 100 * parseInt(t[2]), progressElement.max = 100 * parseInt(t[4]), progressElement.hidden = !1, spinnerElement.hidden = !1) : (progressElement.value = null, progressElement.max = null, progressElement.hidden = !0, e || (spinnerElement.style.display = "none")), statusElement.innerHTML = e) } }, totalDependencies: 0, monitorRunDependencies: e => { this.totalDependencies = Math.max(this.totalDependencies, e), Module.setStatus(e ? "Preparing... (" + (this.totalDependencies - e) + "/" + this.totalDependencies + ")" : "All downloads complete.") } }; Module.setStatus("Downloading..."), window.onerror = e => { Module.setStatus("Exception thrown, see JavaScript console"), spinnerElement.style.display = "none", Module.setStatus = e => { e && console.error("[post-exception status] " + e) } }</script>
+
+<script async src=output.js></script>
+    </body>
+
+    </html>

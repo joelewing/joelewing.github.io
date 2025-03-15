@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Tips & Tricks | Ultimate Guide</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        earth: {
+                            50: '#f5f3e8',
+                            100: '#e8e4c9',
+                            200: '#d8d0a8',
+                            300: '#c5b987',
+                            400: '#b3a46c',
+                            500: '#9b8c54',
+                            600: '#7d7143',
+                            700: '#5f5634',
+                            800: '#423c24',
+                            900: '#2a2617',
+                        },
+                        grass: {
+                            50: '#edf7ed',
+                            100: '#d0e8d0',
+                            200: '#a8d8a8',
+                            300: '#7fc67f',
+                            400: '#57b357',
+                            500: '#3c9a3c',
+                            600: '#2e7b2e',
+                            700: '#215d21',
+                            800: '#143e14',
+                            900: '#0a280a',
+                        },
+                        stone: {
+                            50: '#f2f2f2',
+                            100: '#d9d9d9',
+                            200: '#bfbfbf',
+                            300: '#a6a6a6',
+                            400: '#8c8c8c',
+                            500: '#737373',
+                            600: '#595959',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#121212',
+                        },
+                        gold: {
+                            50: '#fff9e6',
+                            100: '#ffedb3',
+                            200: '#ffe180',
+                            300: '#ffd54d',
+                            400: '#ffc91a',
+                            500: '#e6b300',
+                            600: '#b38c00',
+                            700: '#806500',
+                            800: '#4d3d00',
+                            900: '#1a1400',
+                        },
+                        water: {
+                            50: '#e6f2ff',
+                            100: '#b3d9ff',
+                            200: '#80bfff',
+                            300: '#4da6ff',
+                            400: '#1a8cff',
+                            500: '#0073e6',
+                            600: '#005ab3',
+                            700: '#004080',
+                            800: '#00264d',
+                            900: '#000d1a',
+                        },
+                    },
+                    fontFamily: {
+                        'heading': ['Playfair Display', 'serif'],
+                        'body': ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1607743386760-88f10e73be77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWluZWNyYWZ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60')",
+                    },
+                },
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f3e8;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .tips-card {
+            transition: all 0.3s ease;
+        }
+        
+        .tips-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-pill {
+            transition: all 0.2s ease;
+        }
+        
+        .category-pill:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-earth-50 text-stone-800">
+    <!-- Header Section -->
+    <header class="fixed w-full z-50 bg-earth-800/95 backdrop-blur-sm text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-grass-500 rounded flex items-center justify-center">
+                        <i class="fas fa-cube text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-heading font-bold text-xl">Craft<span class="text-grass-400">Tips</span></h1>
+                        <p class="text-xs text-earth-100/80">Master the Blocks</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="font-medium hover:text-grass-300 transition-colors duration-200">Home</a>
+                    <a href="#categories" class="font-medium hover:text-grass-300 transition-colors duration-200">Categories</a>
+                    <a href="#tips" class="font-medium hover:text-grass-300 transition-colors duration-200">Tips</a>
+                    <a href="#about" class="font-medium hover:text-grass-300 transition-colors duration-200">About</a>
+                </nav>
+                
+                <!-- Search Bar -->
+                <div class="hidden md:flex items-center bg-earth-700/50 rounded-full px-3 py-1">
+                    <input type="text" placeholder="Search tips..." class="bg-transparent border-none focus:outline-none text-sm w-40 placeholder-earth-100/60">
+                    <button class="ml-2 text-earth-100"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation (Hidden by default) -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+                <div class="flex flex-col space-y-3">
+                    <a href="#" class="font-medium hover:text-grass-300 transition-colors duration-200">Home</a>
+                    <a href="#categories" class="font-medium hover:text-grass-300 transition-colors duration-200">Categories</a>
+                    <a href="#tips" class="font-medium hover:text-grass-300 transition-colors duration-200">Tips</a>
+                    <a href="#about" class="font-medium hover:text-grass-300 transition-colors duration-200">About</a>
+                </div>
+                <div class="mt-4 flex items-center bg-earth-700/50 rounded-full px-3 py-1">
+                    <input type="text" placeholder="Search tips..." class="bg-transparent border-none focus:outline-none text-sm w-full placeholder-earth-100/60">
+                    <button class="ml-2 text-earth-100"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-hero bg-cover bg-center h-screen flex items-center relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-earth-900/80"></div>
+        <div class="container mx-auto px-4 z-10 mt-16">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-heading font-bold text-white leading-tight mb-4">Master the Art of <span class="text-grass-400">Minecraft</span></h1>
+                <p class="text-xl text-earth-100 mb-8">Discover expert tips, tricks, and strategies to elevate your gameplay from novice to pro.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#tips" class="bg-grass-600 hover:bg-grass-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center">
+                        <i class="fas fa-lightbulb mr-2"></i> Explore Tips
+                    </a>
+                    <a href="#categories" class="bg-earth-100 hover:bg-earth-200 text-earth-800 font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center">
+                        <i class="fas fa-th-large mr-2"></i> Browse Categories
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Featured Tip Section -->
+    <section class="py-16 bg-earth-800 text-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-grass-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-gold-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+            
+            <div class="text-center mb-12 relative z-10">
+                <h2 class="text-sm uppercase tracking-wider text-grass-400 mb-2 font-bold">Featured Tip</h2>
+                <h3 class="text-3xl md:text-4xl font-heading font-bold">Unlock Hidden Game Mechanics</h3>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8 items-center relative z-10">
+                <div class="md:w-1/2">
+                    <div class="bg-earth-900/50 backdrop-blur-sm p-6 rounded-xl border border-earth-700 shadow-xl">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-gold-500 text-earth-900 px-3 py-1 rounded-full text-xs font-bold">PRO TIP</span>
+                            <span class="text-earth-200 text-sm"><i class="fas fa-clock mr-1"></i> 3 min read</span>
+                        </div>
+                        <h4 class="text-2xl font-heading font-bold mb-4">The Secret to Efficient Mining</h4>
+                        <p class="text-earth-100 mb-4">Branch mining at Y-level 12 is the most efficient way to find diamonds. Create a main tunnel and branch out every 3 blocks to maximize your chances of finding rare ores while minimizing the blocks you need to mine.</p>
+                        <div class="mb-4 p-4 bg-earth-800/80 rounded-lg border border-earth-700">
+                            <p class="text-earth-100 font-medium"><i class="fas fa-lightbulb text-gold-400 mr-2"></i> Always carry a water bucket while mining to counter unexpected lava pockets.</p>
+                        </div>
+                        <button id="view-full-tip" class="bg-grass-600 hover:bg-grass-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out flex items-center">
+                            <i class="fas fa-book-open mr-2"></i> Read Full Tip
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-earth-900/30 backdrop-blur-sm p-4 rounded-xl border border-earth-700 shadow-xl relative h-72 overflow-hidden">
+                        <div class="grid grid-cols-4 grid-rows-4 gap-2 h-full">
+                            <div class="bg-stone-800 rounded-lg col-span-2 row-span-2 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1627855527429-ea636b42e300?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1pbmVjcmFmdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Mining in Minecraft">
+                            </div>
+                            <div class="bg-water-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-water text-2xl text-white"></i>
+                            </div>
+                            <div class="bg-gold-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-gem text-2xl text-white"></i>
+                            </div>
+                            <div class="bg-stone-700 rounded-lg col-span-2 flex items-center justify-center">
+                                <i class="fas fa-hammer text-2xl text-white"></i>
+                            </div>
+                            <div class="bg-grass-700 rounded-lg row-span-2 flex items-center justify-center">
+                                <i class="fas fa-mountain text-2xl text-white"></i>
+                            </div>
+                            <div class="bg-earth-700 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-compass text-2xl text-white"></i>
+                            </div>
+                            <div class="bg-stone-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-pickaxe text-2xl text-white"></i>
+                            </div>
+                            <div class="bg-stone-800 rounded-lg col-span-2 flex items-center justify-center">
+                                <img src="https://images.unsplash.com/photo-1507457379470-08b800bebc67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGNhdmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Cave exploration">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-20 bg-earth-50 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="bg-grass-100 text-grass-800 px-3 py-1 rounded-full text-xs font-bold">EXPLORE</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mt-4 mb-2">Expert Tips By Category</h2>
+                <p class="text-earth-700 max-w-2xl mx-auto">Find exactly what you need with our curated categories, each packed with actionable strategies.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Category 1 -->
+                <div class="category-pill bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:shadow-xl">
+                    <div class="h-40 bg-grass-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-900/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-heading font-bold text-2xl">Survival</h3>
+                            <p class="text-earth-100 text-sm">28 Tips</p>
+                        </div>
+                        <i class="fas fa-campground absolute top-4 right-4 text-white/70 text-2xl"></i>
+                    </div>
+                    <div class="p-4">
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-grass-600 mr-2"></i>
+                                <span>First Night Survival</span>
+                            </li>
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-grass-600 mr-2"></i>
+                                <span>Efficient Food Sources</span>
+                            </li>
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-grass-600 mr-2"></i>
+                                <span>Monster Defense</span>
+                            </li>
+                        </ul>
+                        <button class="mt-4 w-full bg-earth-100 hover:bg-earth-200 text-earth-800 py-2 rounded-lg font-medium transition-colors duration-200">
+                            View All Tips
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="category-pill bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:shadow-xl">
+                    <div class="h-40 bg-water-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-900/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-heading font-bold text-2xl">Redstone</h3>
+                            <p class="text-earth-100 text-sm">34 Tips</p>
+                        </div>
+                        <i class="fas fa-cogs absolute top-4 right-4 text-white/70 text-2xl"></i>
+                    </div>
+                    <div class="p-4">
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-water-600 mr-2"></i>
+                                <span>Basic Circuits</span>
+                            </li>
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-water-600 mr-2"></i>
+                                <span>Automatic Farms</span>
+                            </li>
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-water-600 mr-2"></i>
+                                <span>Complex Mechanisms</span>
+                            </li>
+                        </ul>
+                        <button class="mt-4 w-full bg-earth-100 hover:bg-earth-200 text-earth-800 py-2 rounded-lg font-medium transition-colors duration-200">
+                            View All Tips
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="category-pill bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:shadow-xl">
+                    <div class="h-40 bg-gold-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-900/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-heading font-bold text-2xl">Building</h3>
+                            <p class="text-earth-100 text-sm">42 Tips</p>
+                        </div>
+                        <i class="fas fa-home absolute top-4 right-4 text-white/70 text-2xl"></i>
+                    </div>
+                    <div class="p-4">
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-gold-500 mr-2"></i>
+                                <span>Architecture Styles</span>
+                            </li>
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-gold-500 mr-2"></i>
+                                <span>Interior Design</span>
+                            </li>
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-gold-500 mr-2"></i>
+                                <span>Terraforming</span>
+                            </li>
+                        </ul>
+                        <button class="mt-4 w-full bg-earth-100 hover:bg-earth-200 text-earth-800 py-2 rounded-lg font-medium transition-colors duration-200">
+                            View All Tips
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="category-pill bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:shadow-xl">
+                    <div class="h-40 bg-stone-700 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-900/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-heading font-bold text-2xl">Combat</h3>
+                            <p class="text-earth-100 text-sm">19 Tips</p>
+                        </div>
+                        <i class="fas fa-sword absolute top-4 right-4 text-white/70 text-2xl"></i>
+                    </div>
+                    <div class="p-4">
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-stone-600 mr-2"></i>
+                                <span>PvP Strategies</span>
+                            </li>
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-stone-600 mr-2"></i>
+                                <span>Weapon Selection</span>
+                            </li>
+                            <li class="flex items-center text-earth-800">
+                                <i class="fas fa-angle-right text-stone-600 mr-2"></i>
+                                <span>Boss Battles</span>
+                            </li>
+                        </ul>
+                        <button class="mt-4 w-full bg-earth-100 hover:bg-earth-200 text-earth-800 py-2 rounded-lg font-medium transition-colors duration-200">
+                            View All Tips
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section id="tips" class="py-20 bg-earth-100 relative">
+        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-earth-50 to-transparent"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span class="bg-grass-500 text-white px-3 py-1 rounded-full text-xs font-bold">TIPS COLLECTION</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mt-4 mb-2">Latest Minecraft Strategies</h2>
+                <p class="text-earth-700 max-w-2xl mx-auto">Browse our expertly curated tips to level up your gameplay.</p>
+                
+                <!-- Filters -->
+                <div class="mt-8 flex flex-wrap justify-center gap-3">
+                    <button class="bg-earth-800 text-white px-4 py-2 rounded-full text-sm font-medium">All Tips</button>
+                    <button class="bg-white text-earth-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-earth-200 transition-colors">Beginners</button>
+                    <button class="bg-white text-earth-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-earth-200 transition-colors">Intermediate</button>
+                    <button class="bg-white text-earth-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-earth-200 transition-colors">Advanced</button>
+                    <button class="bg-white text-earth-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-earth-200 transition-colors">Latest</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tip Card 1 -->
+                <div class="tips-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1624895719999-4385a20cfe84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWluZWNyYWZ0JTIwZmFybXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" class="w-full h-full object-cover" alt="Farm in Minecraft">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-grass-100 text-grass-800 px-3 py-1 rounded-full text-xs font-bold">FARMING</span>
+                            <span class="text-earth-500 text-sm"><i class="fas fa-clock mr-1"></i> 5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold mb-2">Automated Crop Harvesting</h3>
+                        <p class="text-earth-700 mb-4">Learn how to build an efficient crop farm that harvests automatically with minimal redstone.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-grass-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-earth-600">Steve Miner</span>
+                            </div>
+                            <button class="text-grass-600 hover:text-grass-700 transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tip Card 2 -->
+                <div class="tips-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <!-- Tip Card 2 (continued) -->
+                        <img src="https://images.unsplash.com/photo-1591370872096-25ef123e3cf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2F2ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" class="w-full h-full object-cover" alt="Cave exploration">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-stone-100 text-stone-800 px-3 py-1 rounded-full text-xs font-bold">MINING</span>
+                            <span class="text-earth-500 text-sm"><i class="fas fa-clock mr-1"></i> 4 min read</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold mb-2">Cave Exploration Safety</h3>
+                        <p class="text-earth-700 mb-4">Essential safety techniques and equipment to bring when exploring caves in the dangerous deep underground.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-stone-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-earth-600">Alex Digger</span>
+                            </div>
+                            <button class="text-stone-600 hover:text-stone-700 transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tip Card 3 -->
+                <div class="tips-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1612800077833-1bba53753cca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1pbmVjcmFmdCUyMGhvdXNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" class="w-full h-full object-cover" alt="Minecraft house">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-xs font-bold">BUILDING</span>
+                            <span class="text-earth-500 text-sm"><i class="fas fa-clock mr-1"></i> 7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold mb-2">Advanced Building Techniques</h3>
+                        <p class="text-earth-700 mb-4">Learn how to use depth, texture, and mixed materials to create stunning structures that stand out.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-gold-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-earth-600">Builder Pro</span>
+                            </div>
+                            <button class="text-gold-600 hover:text-gold-700 transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tip Card 4 -->
+                <div class="tips-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHZpZGVvJTIwZ2FtZSUyMGNvbWJhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" class="w-full h-full object-cover" alt="Combat in Minecraft">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-stone-100 text-stone-800 px-3 py-1 rounded-full text-xs font-bold">COMBAT</span>
+                            <span class="text-earth-500 text-sm"><i class="fas fa-clock mr-1"></i> 3 min read</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold mb-2">PvP Combat Strategies</h3>
+                        <p class="text-earth-700 mb-4">Master the art of player versus player combat with these advanced techniques and weapon combinations.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-stone-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-earth-600">Warrior257</span>
+                            </div>
+                            <button class="text-stone-600 hover:text-stone-700 transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tip Card 5 -->
+                <div class="tips-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHJlZHN0b25lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" class="w-full h-full object-cover" alt="Redstone">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-water-100 text-water-800 px-3 py-1 rounded-full text-xs font-bold">REDSTONE</span>
+                            <span class="text-earth-500 text-sm"><i class="fas fa-clock mr-1"></i> 8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold mb-2">Compact Redstone Builds</h3>
+                        <p class="text-earth-700 mb-4">Create powerful redstone contraptions in minimal space with these innovative designs and techniques.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-water-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-earth-600">RedEngineer</span>
+                            </div>
+                            <button class="text-water-600 hover:text-water-700 transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tip Card 6 -->
+                <div class="tips-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1633532482611-5a39b8e67e55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZW5jaGFudG1lbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" class="w-full h-full object-cover" alt="Enchanting in Minecraft">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-grass-100 text-grass-800 px-3 py-1 rounded-full text-xs font-bold">ENCHANTING</span>
+                            <span class="text-earth-500 text-sm"><i class="fas fa-clock mr-1"></i> 6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold mb-2">Optimal Enchanting Guide</h3>
+                        <p class="text-earth-700 mb-4">Learn which enchantments to prioritize for different tools and armor to maximize your efficiency and survival.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-grass-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-earth-600">Enchanter99</span>
+                            </div>
+                            <button class="text-grass-600 hover:text-grass-700 transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="bg-earth-800 hover:bg-earth-900 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors duration-300">
+                    Load More Tips <i class="fas fa-spinner ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-earth-800 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-full h-full">
+            <div class="absolute right-0 top-0 w-72 h-72 bg-grass-500/20 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3"></div>
+            <div class="absolute left-0 bottom-0 w-72 h-72 bg-gold-500/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Get Weekly Minecraft Tips</h2>
+                <p class="text-earth-200 mb-8">Join thousands of players who receive our weekly newsletter filled with exclusive tips, tricks, and the latest Minecraft updates.</p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Your email address" class="bg-earth-700/50 text-white border border-earth-600 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-grass-500 placeholder-earth-400">
+                    <button class="bg-grass-600 hover:bg-grass-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out whitespace-nowrap">
+                        Subscribe Now
+                    </button>
+                </div>
+                <p class="text-earth-400 text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-earth-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <span class="bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-xs font-bold">ABOUT US</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mt-4 mb-6">We're Passionate Minecraft Players</h2>
+                    <p class="text-earth-700 mb-4 leading-relaxed">CraftTips was created by a team of dedicated Minecraft enthusiasts who have been playing since the alpha days. Our mission is to help players of all skill levels improve their gameplay and discover new ways to enjoy this incredible sandbox game.</p>
+                    <p class="text-earth-700 mb-6 leading-relaxed">Every tip on our site is tested and verified by our team of experts who have thousands of hours in-game. We're constantly exploring, building, and experimenting to bring you the most useful and innovative strategies.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <a href="#" class="bg-gold-500 hover:bg-gold-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center">
+                            <i class="fas fa-users mr-2"></i> Meet Our Team
+                        </a>
+                        <a href="#" class="bg-earth-200 hover:bg-earth-300 text-earth-800 font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-xl overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1617296956430-cf353493e74e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1pbmVjcmFmdCUyMGxhbmRzY2FwZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Minecraft landscape">
+                        </div>
+                        <div class="rounded-xl overflow-hidden h-64 mt-8">
+                            <img src="https://images.unsplash.com/photo-1619396905236-9c7f4ac447b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG1pbmVjcmFmdCUyMGNhc3RsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Minecraft castle">
+                        </div>
+                        <div class="rounded-xl overflow-hidden h-64 mt-8">
+                            <img src="https://images.unsplash.com/photo-1628091202869-76ef4a0e8b7f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fG1pbmVjcmFmdCUyMGZhcm18ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Minecraft farm">
+                        </div>
+                        <div class="rounded-xl overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fG1pbmVjcmFmdCUyMGNhdmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Minecraft cave">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-earth-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-grass-500 rounded flex items-center justify-center">
+                            <i class="fas fa-cube text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-xl">Craft<span class="text-grass-400">Tips</span></h3>
+                            <p class="text-xs text-earth-400">Master the Blocks</p>
+                        </div>
+                    </div>
+                    <p class="text-earth-300 mb-4">Your ultimate resource for Minecraft tips, tricks, and strategies to enhance your gameplay experience.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-earth-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="text-earth-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-lg"></i>
+                        </a>
+                        <a href="#" class="text-earth-400 hover:text-white transition-colors">
+                            <i class="fab fa-discord text-lg"></i>
+                        </a>
+                        <a href="#" class="text-earth-400 hover:text-white transition-colors">
+                            <i class="fab fa-reddit text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-earth-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#categories" class="text-earth-300 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#tips" class="text-earth-300 hover:text-white transition-colors">Tips & Tricks</a></li>
+                        <li><a href="#about" class="text-earth-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-earth-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-earth-300 hover:text-white transition-colors">Survival</a></li>
+                        <li><a href="#" class="text-earth-300 hover:text-white transition-colors">Building</a></li>
+                        <li><a href="#" class="text-earth-300 hover:text-white transition-colors">Redstone</a></li>
+                        <li><a href="#" class="text-earth-300 hover:text-white transition-colors">Combat</a></li>
+                        <li><a href="#" class="text-earth-300 hover:text-white transition-colors">Farming</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Newsletter</h4>
+                    <p class="text-earth-300 mb-4">Subscribe to get weekly tips and updates directly to your inbox.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-earth-800 text-white border border-earth-700 rounded-l-lg px-4 py-2 w-full focus:outline-none focus:ring-1 focus:ring-grass-500 placeholder-earth-500">
+                        <button class="bg-grass-600 hover:bg-grass-700 text-white px-4 py-2 rounded-r-lg transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-earth-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-earth-400 text-sm">&copy; 2025 CraftTips. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-earth-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-earth-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-earth-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tip Detail Modal -->
+    <div id="tip-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-earth-900/80 backdrop-blur-sm">
+        <div class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <div class="h-64 bg-stone-800 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2F2ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1200&q=60" class="w-full h-full object-cover" alt="Cave mining">
+                    <div class="absolute inset-0 bg-gradient-to-t from-earth-900/80 to-transparent"></div>
+                </div>
+                <button id="close-modal" class="absolute top-4 right-4 bg-earth-900/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-earth-900 transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="absolute bottom-4 left-6 right-6">
+                    <span class="bg-gold-500 text-earth-900 px-3 py-1 rounded-full text-xs font-bold">PRO TIP</span>
+                    <h3 class="text-3xl font-heading font-bold text-white mt-2">The Secret to Efficient Mining</h3>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-stone-800 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-bold">Alex Digger</p>
+                            <p class="text-earth-500 text-sm">Mining Expert</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-earth-500 text-sm">
+                        <i class="fas fa-clock mr-2"></i> 3 min read
+                        <span class="mx-3">|</span>
+                        <i class="fas fa-calendar-alt mr-2"></i> March 10, 2025
+                    </div>
+                </div>
+                
+                <div class="prose max-w-none">
+                    <p class="text-lg leading-relaxed mb-6">Branch mining at Y-level 12 is the most efficient way to find diamonds. Create a main tunnel and branch out every 3 blocks to maximize your chances of finding rare ores while minimizing the blocks you need to mine.</p>
+                    
+                    <h4 class="text-xl font-heading font-bold mt-8 mb-4">Why Branch Mining Works</h4>
+                    <p class="leading-relaxed mb-4">Branch mining allows you to expose the maximum number of blocks with the minimum amount of effort. By creating branches that are spaced 3 blocks apart, you ensure that you don't miss any potential ore veins while avoiding redundant mining.</p>
+                    
+                    <div class="bg-earth-100 rounded-lg p-6 my-6">
+                        <h5 class="font-bold mb-3 flex items-center"><i class="fas fa-lightbulb text-gold-500 mr-2"></i> Pro Tip</h5>
+                        <p>Always carry a water bucket while mining to counter unexpected lava pockets. Water can quickly solidify lava into obsidian, preventing damage to yourself and valuable items.</p>
+                    </div>
+                    
+                    <h4 class="text-xl font-heading font-bold mt-8 mb-4">Essential Equipment</h4>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-grass-500 mt-1 mr-2"></i>
+                            <span><strong>Iron/Diamond Pickaxe:</strong> Iron is sufficient, but diamond is more efficient</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-grass-500 mt-1 mr-2"></i>
+                            <span><strong>Torches:</strong> At least two stacks to properly light your tunnels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-grass-500 mt-1 mr-2"></i>
+                            <span><strong>Water Bucket:</strong> Essential for dealing with lava</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-grass-500 mt-1 mr-2"></i>
+                            <span><strong>Food:</strong> Steaks or golden carrots are recommended</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-grass-500 mt-1 mr-2"></i>
+                            <span><strong>Spare Tools:</strong> Bring backups for long mining sessions</span>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-heading font-bold mt-8 mb-4">Step-by-Step Process</h4>
+                    <ol class="space-y-4 mb-6 list-decimal pl-5">
+                        <li class="pl-2">Dig down to Y-level 12 (check with F3 on Java Edition)</li>
+                        <li class="pl-2">Create a main tunnel in any direction</li>
+                        <li class="pl-2">Every 3 blocks, dig a side tunnel perpendicular to your main tunnel</li>
+                        <li class="pl-2">Continue each branch tunnel for about 20-30 blocks</li>
+                        <li class="pl-2">Place torches every 8-10 blocks to prevent mob spawning</li>
+                        <li class="pl-2">Mark explored tunnels with a torch or sign at the entrance</li>
+                    </ol>
+                    
+                    <div class="bg-stone-100 rounded-lg p-6 my-6">
+                        <h5 class="font-bold mb-3">Ore Distribution by Y-Level</h5>
+                        <ul class="space-y-2">
+                            <li><strong>Diamond:</strong> Y-levels 5-16 (most common at Y=11)</li>
+                            <li><strong>Gold:</strong> Y-levels 5-29</li>
+                            <li><strong>Redstone:</strong> Y-levels 5-12</li>
+                            <li><strong>Lapis Lazuli:</strong> Y-levels 13-18</li>
+                            <li><strong>Iron:</strong> Found throughout, but common between Y=24 and Y=54</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-10 pt-6 border-t border-earth-200">
+                    <h4 class="font-heading font-bold text-lg mb-4">Related Tips</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <a href="#" class="flex items-center p-3 bg-earth-100 rounded-lg hover:bg-earth-200 transition-colors">
+                            <div class="w-12 h-12 bg-water-600 rounded-lg flex items-center justify-center text-white mr-3">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-earth-800">Underwater Mining Techniques</h5>
+                                <p class="text-earth-600 text-sm">Learn how to mine efficiently underwater</p>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center p-3 bg-earth-100 rounded-lg hover:bg-earth-200 transition-colors">
+                            <div class="w-12 h-12 bg-stone-600 rounded-lg flex items-center justify-center text-white mr-3">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-earth-800">Fortune Enchantment Guide</h5>
+                                <p class="text-earth-600 text-sm">Maximize your ore drops with Fortune</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Modal functionality
+        const modal = document.getElementById('tip-modal');
+        const openModalBtn = document.getElementById('view-full-tip');
+        const closeModalBtn = document.getElementById('close-modal');
+        
+        openModalBtn.addEventListener('click', () => {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside the content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Animate tips cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.tips-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
